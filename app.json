@@ -1,0 +1,12 @@
+{
+  "name": "reAct",
+  "displayName": "reAct",
+  "expo": {
+    "name": "reAct",
+    "slug": "reAct",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
