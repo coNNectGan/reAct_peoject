@@ -1,13 +1,23 @@
 import React from 'react';
-import {StyleSheet,Text, View } from 'react-native';
+import {StyleSheet,Text, View, Button, TouchableWithoutFeedback } from 'react-native';
 
+// const generate = () =>{
+//     return (
+//       <Button
+//       title="add one"
+//       onPress={() => alert('bello+1')}/>
+//     )
+// }
 const generate = () =>{
     return (
-        <View style={styles.generate}>
+        <TouchableWithoutFeedback>
+ <View style={styles.generate}>
             <Text>
                 Add number
             </Text>
         </View>
+        </TouchableWithoutFeedback>
+       
     )
 }
 
