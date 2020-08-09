@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet,Text, View, Button, TouchableWithoutFeedback } from 'react-native';
+import { StyleSheet, Text, View, Button, TouchableWithoutFeedback, TouchableOpacity } from 'react-native';
 
 // const generate = () =>{
 //     return (
@@ -8,26 +8,28 @@ import {StyleSheet,Text, View, Button, TouchableWithoutFeedback } from 'react-na
 //       onPress={() => alert('bello+1')}/>
 //     )
 // }
-const generate = () =>{
+const generate = (props) => {
     return (
-        <TouchableWithoutFeedback>
- <View style={styles.generate}>
-            <Text>
-                Add number
+        <TouchableOpacity
+            onPress={() => props.add()}
+        >
+            <View style={styles.generate}>
+                <Text>
+                    Add number
             </Text>
-        </View>
-        </TouchableWithoutFeedback>
-       
+            </View>
+        </TouchableOpacity>
+
     )
 }
 
 const styles = StyleSheet.create(
     {
-        generate:{
-            backgroundColor:'purple',
-            alignItems:'center',
-            padding:10,
-            width:'100%'
+        generate: {
+            backgroundColor: 'purple',
+            alignItems: 'center',
+            padding: 10,
+            width: '100%'
         }
     }
 )
