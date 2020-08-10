@@ -4,6 +4,7 @@ import {StyleSheet,Text, View } from 'react-native';
 import Nav from './src/nav';
 import Generator from './src/generator';
 import ListItem from './src/listitem';
+import Input from './src/input';
 
 class App extends Component {
   state = {
@@ -40,7 +41,7 @@ render() {
     }>
       
 
-      <Nav name={this.state.nameOfAPP}/>
+      {/* <Nav name={this.state.nameOfAPP}/>
       <View style={styles.basicView}>
         <Text style={styles.basi}>
           Bello
@@ -50,7 +51,9 @@ render() {
      <ListItem 
      items={this.state.random}
      deleted={this.onNumberDelete}
-     />
+     /> */}
+
+     <Input/>
     </View>
   );
 }
