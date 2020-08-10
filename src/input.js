@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TextInput, Button, TabBarIOS } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button, ScrollView } from 'react-native';
 
 class Input extends Component {
     state = {
         myTextInput: '',
-        users:['Gan','James','Lisa']
+        users: ['Gan', 'James', 'Lisa']
     }
 
     onChangeInput = (event) => {
@@ -18,8 +18,8 @@ class Input extends Component {
     onAddUSER = () => {
         this.setState(prevState => {
             return {
-                myTextInput:'',
-                users:[...prevState.users,prevState.myTextInput]
+                myTextInput: '',
+                users: [...prevState.users, prevState.myTextInput]
             }
         })
 
@@ -27,29 +27,32 @@ class Input extends Component {
 
     render() {
         return (
-            <View style={styles.inputwrapper}>
-                {
-                    this.state.users.map(
-                        item => (
-                            <Text style={styles.users} key={item}>{item}</Text>
-                        )
-                    )
-                }
-                <TextInput
-                    value={this.state.myTextInput}
-                    style={styles.input}
-                    onChangeText={this.onChangeInput}
-                // multiline={true}
-                // maxLength={5}
-                // editable={true}
-                // autoCapitalize={'none'}
-                />
-                <Button
-                    title="Add user name"
-                    onPress={this.onAddUSER}
-                />
-            </View>
+            
+                <View style={styles.inputwrapper}>
+                    <TextInput
+                        value={this.state.myTextInput}
+                        style={styles.input}
+                        onChangeText={this.onChangeInput}
+                    // multiline={true}
+                    // maxLength={5}
+                    // editable={true}
+                    // autoCapitalize={'none'}
+                    />
+                    <Button
+                        title="Add user name"
+                        onPress={this.onAddUSER}
+                    />
 
+                    {
+                        this.state.users.map(
+                            item => (
+                                <Text style={styles.users} key={item}>{item}</Text>
+                            )
+                        )
+                    }
+
+                </View>
+           
         )
 
     }

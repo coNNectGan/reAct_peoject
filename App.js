@@ -1,6 +1,6 @@
 // import { StatusBar } from 'expo-status-bar';
 import React, { Component } from 'react';
-import {StyleSheet,Text, View } from 'react-native';
+import {StyleSheet,Text, View,ScrollView} from 'react-native';
 import Nav from './src/nav';
 import Generator from './src/generator';
 import ListItem from './src/listitem';
@@ -39,6 +39,7 @@ render() {
     <View style ={
      styles.container
     }>
+      <Nav name={this.state.nameOfAPP}/>
       
 
       {/* <Nav name={this.state.nameOfAPP}/>
@@ -52,8 +53,13 @@ render() {
      items={this.state.random}
      deleted={this.onNumberDelete}
      /> */}
-
-     <Input/>
+  <ScrollView style = {{width:'100%'}}
+  onContentSizeChange={(w,h) => alert('bello')}
+  onMomentumScrollBegin={() => alert()}
+  onMomentumScrollEnd={()=>alert('end')}>
+  <Input/>
+  </ScrollView>
+    
     </View>
   );
 }
