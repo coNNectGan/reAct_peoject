@@ -1,10 +1,13 @@
 // import { StatusBar } from 'expo-status-bar';
 import React, { Component } from 'react';
-import {StyleSheet,Text, View,ScrollView} from 'react-native';
+import {StyleSheet,Text, View,ScrollView,ActivityIndicator, Image,ImageBackground} from 'react-native';
 import Nav from './src/nav';
 import Generator from './src/generator';
 import ListItem from './src/listitem';
 import Input from './src/input';
+import Picker from './src/picker';
+import gitcat from './src/images/gitcat.png';
+import ModalComp from './src/modal';
 
 class App extends Component {
   state = {
@@ -54,11 +57,33 @@ render() {
      deleted={this.onNumberDelete}
      /> */}
   <ScrollView style = {{width:'100%'}}
-  onContentSizeChange={(w,h) => alert('bello')}
-  onMomentumScrollBegin={() => alert()}
-  onMomentumScrollEnd={()=>alert('end')}>
-  <Input/>
+  // onContentSizeChange={(w,h) => alert('bello')}
+  // onMomentumScrollBegin={() => alert()}
+  // onMomentumScrollEnd={()=>alert('end')}
+  >
+  {/* <Input/> */}
+  <Picker/>
+  <ActivityIndicator
+    size="large"
+    color="#0000ff"
+    animating={true}
+  
+  />
+
+{/* <ImageBackground
+  source={{uri:'https://picsum.photos/id/237/200/300'}}
+  style={styles.gitcat}
+  resizeMode="cover"
+  onLoadEnd= { () => alert('Image loaded.')}
+  >
+  <Text>Bello</Text>
+  </ImageBackground> */}
+
+  <ModalComp/>
+
   </ScrollView>
+
+  
     
     </View>
   );
@@ -82,6 +107,11 @@ const styles = StyleSheet.create({
     color:'white',
     textAlign:'center',
     padding:20,
+  },
+  gitcat:{
+    width:'100%',
+  height:300,
+    marginTop:20
   }
 });
 
